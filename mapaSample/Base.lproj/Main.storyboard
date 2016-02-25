@@ -1,25 +1,121 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mapaSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="gQL-Wz-Hda">
+                                <rect key="frame" x="6" y="20" width="314" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xgT-uF-xrH"/>
+                                </constraints>
+                                <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="MarkPoint" id="LvD-no-P5o">
+                                        <rightBarButtonItems>
+                                            <barButtonItem systemItem="play" id="egt-kZ-Yih">
+                                                <connections>
+                                                    <action selector="startNavigation:" destination="BYZ-38-t0r" id="6YH-4K-sb6"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="stop" id="C0e-Ng-5lM">
+                                                <connections>
+                                                    <action selector="pararNavigation:" destination="BYZ-38-t0r" id="yQh-Eh-aam"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMl-3d-DbI">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="3ju-ik-zkx">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="spf-Mq-7BJ">
+                                            <rect key="frame" x="16" y="7" width="50" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Normal"/>
+                                            <connections>
+                                                <action selector="typeNormal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3eK-LW-NXp"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="60w-xV-qj3">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gCX-tg-ev3">
+                                            <rect key="frame" x="76" y="7" width="52" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Satelite"/>
+                                            <connections>
+                                                <action selector="typeSatelite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GZw-Qk-f89"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="UcS-ej-0Ya">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ECj-Jv-3md">
+                                            <rect key="frame" x="138" y="7" width="51" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Hibrido"/>
+                                            <connections>
+                                                <action selector="typeHibrido:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gRP-OE-gQK"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="EIe-cM-PmU">
+                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.059999999999999998" minValue="0.032000000000000001" maxValue="1" id="D87-kh-bea">
+                                            <rect key="frame" x="199" y="7" width="108" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="zoomUpdating:" destination="BYZ-38-t0r" eventType="valueChanged" id="8Gz-0w-MBa"/>
+                                            </connections>
+                                        </slider>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="elf-HZ-nUa">
+                                <rect key="frame" x="-25" y="64" width="370" height="460"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="iMl-3d-DbI" secondAttribute="trailing" constant="-10" id="0nv-2P-vte"/>
+                            <constraint firstAttribute="trailing" secondItem="gQL-Wz-Hda" secondAttribute="trailing" id="9iL-Tb-Zhh"/>
+                            <constraint firstItem="gQL-Wz-Hda" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="B48-GC-Vrh"/>
+                            <constraint firstItem="elf-HZ-nUa" firstAttribute="centerX" secondItem="iMl-3d-DbI" secondAttribute="centerX" id="Cbc-j8-YBn"/>
+                            <constraint firstItem="iMl-3d-DbI" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="b7K-fF-EKj"/>
+                            <constraint firstItem="elf-HZ-nUa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-41" id="eMd-1T-M4b"/>
+                            <constraint firstItem="iMl-3d-DbI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kwI-0Z-FFj"/>
+                            <constraint firstItem="gQL-Wz-Hda" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="pry-w5-kMf"/>
+                            <constraint firstItem="elf-HZ-nUa" firstAttribute="top" secondItem="gQL-Wz-Hda" secondAttribute="bottom" id="toX-9c-ofh"/>
+                            <constraint firstItem="elf-HZ-nUa" firstAttribute="bottom" secondItem="iMl-3d-DbI" secondAttribute="top" id="yJm-1b-GpO"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="mapa" destination="elf-HZ-nUa" id="jVv-Z4-LyZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="169" y="50"/>
         </scene>
     </scenes>
 </document>
